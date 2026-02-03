@@ -7,3 +7,6 @@ function sum(a,b){
   return result;
 }
 console.log(sum(a,b));
+
+//import {multiply} from './module.js';   //! install modules in js
+//console.log(multiply(a,b));
