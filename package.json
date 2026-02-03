@@ -1,0 +1,24 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "This is the short and concise revision for JS concepts",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdataullah-dev/JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mdataullah-dev/JS/issues"
+  },
+  "homepage": "https://github.com/mdataullah-dev/JS#readme",
+  "dependencies": {
+    "axios": "^1.13.4"
+  }
+}
