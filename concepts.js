@@ -13,7 +13,47 @@
 // symbol = a data type whose instances are unique and immutable
 //? for unique we use symbol { use in react}
 
-console.log(typeof null); // object  //! null is type of object
-console.log(typeof undefined); // undefined
-console.log(typeof 123n); // bigint
-console.log(typeof Symbol("id")); // symbol
+// console.log(typeof null); // object  //! null is type of object
+// console.log(typeof undefined); // undefined
+// console.log(typeof 123n); // bigint
+// console.log(typeof Symbol("id")); // symbol
+
+//===================================================================//
+
+let score = "100";
+console.log(typeof(score));
+console.log(typeof score);
+
+//? this is conversion of string to number 
+let newValue = Number(score)  // here Number is a function that converts string to number
+console.log(typeof newValue);
+
+//! concept 
+
+let x = "100abc"
+console.log(typeof x);
+let y = Number(x);
+console.log(typeof y);  // conversion toh ho gya but this is not a valid number so it guives NaN
+console.log(y); // NaN => Not a Number
+
+console.log("================================");
+//suppose  we do :
+let a = null;
+let b = Number(a);
+console.log(b); // 0 => null is considered as 0 in number conversion
+
+
+let c = undefined;
+let d = Number(c);
+console.log(d); // NaN => undefined is not a valid number so it gives NaN
+
+//? string ko "histesh" isko text wale ko number mein karengein toh "NaN ayega kyuki "histesh" is not a valid number
+//? true boolen ko karengein toh 1 dega and false boolen ko karengein toh 0 dega
+
+//? Number ki trah Boolean v hota hai 
+
+//! 1 => true , 0 => false  [  conversion of number to boolean  ]
+//! "" => false , "abc" => true
+
+
+
