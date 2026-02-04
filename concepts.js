@@ -55,5 +55,18 @@ console.log(d); // NaN => undefined is not a valid number so it gives NaN
 //! 1 => true , 0 => false  [  conversion of number to boolean  ]
 //! "" => false , "abc" => true
 
+console.log("------------------OPERATIONS-------------------");
+
+let num1 = 10
+let num2 = -num1
+console.log(num2); // -10
+
+console.log(2**2); // ** means power => 2 to the power of 2 which is 4
+
+
+console.log("-----------------comparisions-----------------");
+
+
+
 
 
