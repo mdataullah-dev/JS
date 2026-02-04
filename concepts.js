@@ -66,6 +66,17 @@ console.log(2**2); // ** means power => 2 to the power of 2 which is 4
 
 console.log("-----------------comparisions-----------------");
 
+//? == means only value check hoga and conversion bhi kr deta hai 
+console.log("2" == 2);  // ye true de dega kyu ki ye value check kar raha hai aur "2" ko number mein convert kar dega
+console.log("2" != 2);  // ye false de dega kyu ki ye value check kar raha hai aur "2" ko number mein convert kar dega
+//? === means value and data type dono check hoga , & conversion nhi karega 
+console.log("2" === 2); // ye false de dega kyu ki ye value ke sath sath data type bhi check kar raha hai , aur "2" string hai aur 2 number hai
+console.log("2" !== 2); // ye true de dega kyu ki ye value ke sath sath data type bhi check kar raha hai , aur "2" string hai aur 2 number hai
+
+//===================================================================// 
+
+
+
 
 
 
