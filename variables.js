@@ -9,8 +9,14 @@ accountPassword = "Zaid@54321"
 accountCity = "Mumbai"
 let accountState = null;
 let x;
-
+let y = undefined;
 
 //console.log(accountID);//! will throw error because const variable cannot be changed
 console.table([accountID, accountEmail, accountPassword, accountCity, accountState, x]);
+
+
+
+//===================================================================//
+
+
 
