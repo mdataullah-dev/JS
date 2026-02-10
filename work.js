@@ -355,7 +355,102 @@ Because plain objects are neither iterable nor array-like.
 const score1 = 90
 const score2 = 80
 const score3 = 70
-console.log(Array.of(score1,score2,score3));
+//console.log(Array.of(score1,score2,score3));
+
+//                 !          OBEJECTs
+
+//? singleton object => ek hi instance create hota hai, usi instance ko baar baar use karte hai, isse memory efficient banate hai
+
+//? jab literals se object create karte hai to wo singleton object hota hai, kyunki literals se object create karne par ek hi instance create hota hai, usi instance ko baar baar use karte hai
+//? jab constructor function se object create karte hai to wo singleton object nahi hota hai, kyunki constructor function se object create karne par har baar naya instance create hota hai, isliye wo singleton object nahi hota hai
+
+//! object literal
+
+const obj1 ={}  // this is obkject literal, isme hum directly object create karte hai, isme ek hi instance create hota hai, usi instance ko baar baar use karte hai, isliye ye singleton object hota hai
+const o = Object.create({name:"Nazish"}) // ye constructor function se object create karne ka tarika hai, isme har baar naya instance create hota hai, isliye ye singleton object nahi hota hai
+
+console.log(obj1);
+console.log(o.name);
+
+const mysym = Symbol("id")
+//* add this symbol in object as property key
+const JsUser = {
+    name : "Md Ataullah",
+    "Full Name" : "Md Ataullah Khan",
+    age : 22,
+    // mysym : 101,
+    [mysym] : "x101",
+    email : "ataullah@gmail.com",
+    location : "Bihar"
+}
+
+console.log(JsUser.email); //? dot notation se object ke property ko access kar sakte hai, isme property name directly likhte hai
+console.log(JsUser["email"]); //? bracket notation se object ke property ko access kar sakte hai, isme property name string me likhte hai, isme variable bhi use kar sakte hai
+console.log(JsUser["Full Name"]);
+//console.log(JsUser.mysym); //? symbol nhi raha bumber bn chuka hai 
+//console.log(typeof JsUser.mysym); //? symbol banane ke liye inside object we make sym key inside bracket notation and assign symbol value to it, isliye ye symbol ban gaya hai, isme hum symbol ko property key ke roop me use kar sakte hai, isme hum symbol ko property value ke roop me bhi use kar sakte hai, isme hum symbol ko variable ke roop me bhi use kar sakte hai
+console.log(JsUser[mysym]);
+console.log(JsUser);
+//console.log(JsUser.Full Name); //? isme error aayega kyunki property name me space hai, isliye dot notation se access nahi kar sakte hai, bracket notation se access karna padega
+
+JsUser.email = "aaa@google.com"
+console.log(JsUser);
+
+// agar koi chnage na kare object then 
+//Object.freeze(JsUser)
+
+// JsUser.age = 29
+// console.log(JsUser);
+/*
+[]
+{}
+Nazish
+ataullah@gmail.com
+ataullah@gmail.com
+Md Ataullah Khan
+x101
+{
+  name: 'Md Ataullah',
+  'Full Name': 'Md Ataullah Khan',
+  age: 22,
+  email: 'ataullah@gmail.com',
+  location: 'Bihar',
+  [Symbol(id)]: 'x101'
+}
+{
+  name: 'Md Ataullah',
+  'Full Name': 'Md Ataullah Khan',
+  age: 22,
+  email: 'aaa@google.com',
+  location: 'Bihar',
+  [Symbol(id)]: 'x101'
+}
+file:///C:/Users/ACER/Documents/REACTJS/JS/work.js:402
+JsUser.age = 29
+           ^
+
+TypeError: Cannot assign to read only property 'age' of object '#<Object>'      
+    at file:///C:/Users/ACER/Documents/REACTJS/JS/work.js:402:12
+    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:651:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.19.0
+PS C:\Users\ACER\Documents\REACTJS\JS> 
+*/
+
+JsUser.greetins = function(){
+    console.log("hello Viewer"); 
+}
+
+JsUser.greet = function(){
+    console.log(`hello viewer you are seeing ${this.name} details`);  
+}
+
+console.log(JsUser.greetins);
+console.log(JsUser.greetins());
+console.log(JsUser.greet);
+console.log(JsUser.greet());
 
 
 
