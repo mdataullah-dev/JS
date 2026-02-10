@@ -53,6 +53,55 @@ const addtwo = function(num){   //? function ko aise v bana skte hain kisi varai
 }
 console.log(addtwo(10))  // yahan pr agar is tarah se function ko varaible ke ander declare karengein toh uske declaration ke baad hi hum kr skte acces ya call us function ko
 
+//================================//
+
+
+//! ARROW Functions    
+
+//? this keyword => current context ko refer krta hai
+
+//? insdie browser if we do console.log(this) => then we get window , that means in browser the current context is window ..uska current global object
+//* if do inside vs code console.log(this) => we get {} empty object kyuki uska current context kuch nhi hai 
+
+const user = {
+    username : "MD ATAULLAH",
+    age : 20,
+    welcomeMessage : function(){
+        console.log(`${this.username}, welcome to website`);
+        console.log(this);
+        
+    }
+
+}
+// user.welcomeMessage()
+// user.username = "MISBAH"
+// user.welcomeMessage()
+// console.log(this)
+
+
+//? arrow func
+
+// const run = () => {
+//     console.log(this)
+// }
+// run()
+
+// const res = (a,b) => {    //? curly braces mein wrap kroge toh retrun jeyword dena padega
+//     return a-b;
+// }
+// console.log(res(-100,-100))
+
+//? implicit return
+
+const res = (a,b) => a-b;    // ? ek hi line mein v kr skte
+console.log(res(-100,-100))
+
+//? const res = (a,b) => (a-b); parenthesis mein wrap kara toh return keyword nhi chaiye   
+
+//? object ko return krne ke liye hamein () paranethesis ke ander hi dalna padta hai
+const oj = () => ({name:"nazish"})
+console.log(oj())
+
 
 
 
