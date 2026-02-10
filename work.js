@@ -248,6 +248,114 @@ const newwarr = [...marvelHero, ...indianHero] //? spread operator se bhi do arr
 //console.log(newwarr);
 
 
+//? flat => nested array ko single level array me convert karne ke liye use hota hai
+const nestedArr = [1,2,[3,4],[5,6,[7,0,0],9,[0]]]
+const flatArr = nestedArr.flat(Infinity) //? flat method se nested array ko single level array me convert kar sakte hai, isme original array modify nahi hota hai
+//console.log(flatArr);
+
+// console.log(Array.isArray("Nazish")); //? isArray method se check kar sakte hai ki given value array hai ya nahi, isme string pass karne par false return karega
+// console.log(Array.from("Nazish")); //? from method se string ko array me convert kar sakte hai, isme string pass karne par array return karega
+
+
+console.log(Array.from({name:"Nazish"}));
+//? iska o/p [] empty aya why? => .from bs 2 se array bana skta hai 1? iterable (string, array, set, map) ya array-like object (numeric keys + length property) se array bana sakta hai, tumhara object neither iterable hai na array-like, isliye empty array return hua
+
+/*
+Tumhara code
+console.log(Array.from({ name: "Nazish" }));
+
+Output
+[]
+
+❓ Empty array kyun aaya?
+
+Array.from() sirf do cheezon se array bana sakta hai:
+
+Iterable (jinko loop kiya ja sake)
+
+string
+
+array
+
+Set, Map
+
+Array-like object
+
+jisme numeric keys (0,1,2...) ho
+
+aur length property ho
+
+Tumhara object kya hai?
+{ name: "Nazish" }
+
+
+❌ Iterable nahi
+
+❌ Numeric keys nahi (0,1,2)
+
+❌ length property nahi
+
+Isliye JS bolta hai:
+
+“Isse array kaise banao?”
+Aur safe answer deta hai → []
+
+✅ Kaise kaam karega? (correct ways)
+✔ Object values se array
+Array.from(Object.values({ name: "Nazish" }));
+
+
+Output:
+
+["Nazish"]
+
+✔ Object keys se array
+Array.from(Object.keys({ name: "Nazish" }));
+
+
+Output:
+
+["name"]
+
+✔ String ke saath (iterable hai)
+Array.from("Nazish");
+
+
+Output:
+
+["N","a","z","i","s","h"]
+
+✔ Array-like object example
+Array.from({0:"A",1:"B",length:2});
+
+
+Output:
+
+["A","B"]
+
+🧠 One-line rule (yaad rakh lo)
+
+Array.from() object ko tabhi array banata hai jab wo iterable ya array-like ho
+
+🔥 Interview trap
+
+Question:
+
+Why Array.from({}) gives []?
+
+Answer:
+
+Because plain objects are neither iterable nor array-like.
+
+*/
+
+
+//? .of => array of method se hum kisi bhi value ko array me convert kar sakte hai, isme original value modify nahi hoti hai
+
+const score1 = 90
+const score2 = 80
+const score3 = 70
+console.log(Array.of(score1,score2,score3));
 
 
 
