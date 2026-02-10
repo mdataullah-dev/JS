@@ -19,11 +19,15 @@ const course = {
 }
 
 const {courseInstructor} = course  //! yahan pr humne kiya destructruring
-console.log(courseInstructor);
+//console.log(courseInstructor);
 
 const {price:p} = course
-console.log(p);
+//console.log(p);
 
+
+//? here price : p => destructure kr diya humne
+
+//! FUNCTIONs
 
 
 
