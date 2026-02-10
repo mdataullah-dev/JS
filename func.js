@@ -102,8 +102,31 @@ console.log(res(-100,-100))
 const oj = () => ({name:"nazish"})
 console.log(oj())
 
+//! iife 
+//? immediatelly invoked function expressions 
+
+//?       () = ye function hua  () - ye usko execute krne ke liye hua
+//?      function ko wrap kr do-  () ()  - ye excecute krega
+//named iife
+
+function chai() {
+    console.log(`DB CONNECTED`);  
+}
+chai();      //! iife use krne ke liye ek semicolon dena padega end klrene ke liye function ye wala
 
 
+//? iife
+
+(function chai_iife() {
+    console.log(`DB CONNECTED using IIFE`);  
+})();
+
+
+(    (name)   => {
+    console.log(`DB CONNECTED BY ${name}`);  
+    }
+) ("nazish")     //? () () --- isi form meim hai dekho bs pehle wale mein () parenthesis mein humne arroe func use kiya
+                 //?  2nd wala () --- isko excecute kiya 
 
 
 
