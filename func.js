@@ -121,7 +121,7 @@ chai();      //! iife use krne ke liye ek semicolon dena padega end klrene ke li
     console.log(`DB CONNECTED using IIFE`);  
 })();
 
-
+//! unnamed iife  with parameter passing
 (    (name)   => {
     console.log(`DB CONNECTED BY ${name}`);  
     }
