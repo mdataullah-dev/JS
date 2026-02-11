@@ -246,10 +246,10 @@ coding.forEach( function (i) {  //? i = params haoi jo 1 by 1 coding ka elemet l
 
 //? using arrow func  :    ( )  => { }
 
-coding.forEach( (i) => {console.log(i)} )
+//coding.forEach( (i) => {console.log(i)} )
 
 
-coding.forEach( (item , index , arr) => {console.log(item, index, arr);
+coding.forEach( (item , index , arr) => {//console.log(item, index, arr);
 })
 
 const arrobj = [
@@ -266,10 +266,127 @@ const arrobj = [
         file : ".py"
     }
 ]
-arrobj.forEach( (item) => {  //? yahan pr item jo hai vo pura ka pura 1 object lega araay ke ander se
-    console.log(`${item.language} : ${item.file}`);
+arrobj.forEach( (item) => {  //? yahan pr item jo hai vo pura ka pura 1 object lega araay ke ander se 
+    //console.log(`${item.language} : ${item.file}`);
     
 })      
+
+
+
+//======================================================//
+
+//for each : new things to learn 
+
+// forEach do not return anything but we for returning we can use filter : filer v leta hai callback func
+
+let arr1 = [ 2,3,3,4,5,5,6,9]
+const aarayValues = arr1.forEach(  (item) => {
+    //console.log(item);
+    return item
+})
+console.log(aarayValues);    //? we get undefined ? coz foreach does not return anything
+
+
+//? for returing we use filter   and isme jo true hai wahi pass hoga 
+
+// const r = arr1.filter( (i)  => {
+//     //console.log(i);
+//     return i
+    
+// })
+// console.log(r);
+
+
+// const r = arr1.filter( (i)  => i>4)      //? ye value return karega 
+// console.log(r);
+
+//? in arrow func : we we use ()  or direct write we dont need to use return 
+// const r = arr1.filter( (i)  => (i>4)  )      //? ye value return karega 
+// console.log(r);
+
+
+//! filter mein hota hai :       arrayname.filter( (element) => condition )
+//?                                                 arrow function hai  
+//?                                                 (item)  => condition    :directly no need type return
+//?                                                 ()  => (condition)
+//?                                                 ()  => { return condition}
+ 
+//? but we use {} i.e we need to return
+const r = arr1.filter( (i)  => {
+    return i>4
+})      //? ye value return karega nhi karega without using return keyword
+console.log(r);
+
+
+
+//!   .map operation 
+
+let arr9 = [ 4,5,6,7,8,0]
+
+// const newarr = arr9.map( (eacHitem) => eacHitem * 10 )
+// console.log(newarr);
+
+
+//? chaining : .map.mao.filter
+
+//* filter => condition ka game true/false { true hua toh return varna [] nothing }
+//* map => main koi condition nhi hum kuch v return kr skte kaam kr ke 
+
+const newarr = arr9
+               .map( (eacHitem) => eacHitem * 10 )   //? yahan pr new array bn chuka vo pass hoga neeche wale .map ko 
+               .map( (eacHitem) => eacHitem + 1)    //? hum kuch v naam rakh skte uske item ka 
+               .map( (i) => i/2)
+               .filter( (j) => j > 20 )   //? filter mein condition lagao agar condition true hui yoh wahi retrun krega 
+
+console.log(newarr);
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//? REDUCE
+
+let cart = [ 1 , 2 , 4 , 1 , -1 , 0 , 10, 6 ]
+
+// const total = cart.reduce( function(acc , currentValue){
+//     console.log(`acc: ${acc} & current: ${currentValue}`);
+//     return acc + currentValue
+
+// })
+// console.log(total);
+
+// const total = cart.reduce( function(acc , currentValue){
+//     console.log(`acc: ${acc} & current: ${currentValue}`);
+//     return acc + currentValue
+
+// }, 0 )   // added initail value that is 0
+// console.log(total);
+
+//?initail value dena zarori hai 0
+
+
+const total = cart.reduce( (acc, currentVal) => acc + currentVal , 0)
+console.log(total);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
